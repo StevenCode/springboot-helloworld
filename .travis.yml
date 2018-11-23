@@ -6,8 +6,8 @@ before_install:
   -in id_rsa.enc -out ~\/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
 
-  addons:
-    ssh_known_hosts: 47.110.46.159
+addons:
+   ssh_known_hosts: 47.110.46.159
 
-    after_success:
+after_success:
     - ssh root@47.110.46.159 echo 'hello world'
