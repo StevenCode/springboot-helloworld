@@ -2,12 +2,10 @@ language: java
 jdk:
 - oraclejdk8
 before_install:
-- openssl aes-256-cbc -K $encrypted_7de4f116116e_key -iv 0 $encrypted_7de4f116116e_iv
-  -in id_rsa.enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_7de4f116116e_key -iv $encrypted_7de4f116116e_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
-
 addons:
-   ssh_known_hosts: 47.110.46.159
-
+  ssh_known_hosts: 47.110.46.159
 after_success:
-    - ssh root@47.110.46.159 echo 'hello world'
+- ssh root@47.110.46.159 echo 'hello world'
