@@ -9,3 +9,5 @@ after_success:
 - ssh root@47.110.46.159 "echo -e 'hello world'"
 addons:
   ssh_known_hosts: 47.110.46.159
+script:
+- echo 'hello'
