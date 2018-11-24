@@ -12,7 +12,7 @@ after_success:
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 - docker build -t stevencode/springboot-helloworld:$TRAVIS_BRANCH-$TRAVIS_BUILD_ID .
 - docker push stevencode/springboot-helloworld:$TRAVIS_BRANCH-$TRAVIS_BUILD_ID;
-- ssh root@47.110.46.159 "./root/workspace/deploy.sh $TRAVIS_BRANCH-$TRAVIS_BUILD_ID"
+- ssh root@47.110.46.159 "/root/workspace/deploy.sh $TRAVIS_BRANCH-$TRAVIS_BUILD_ID"
 addons:
   ssh_known_hosts: 47.110.46.159
 script:
